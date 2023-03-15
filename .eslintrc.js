@@ -38,11 +38,21 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "react/jsx-wrap-multilines": ["error", {
+            'declaration': "true",
+            'assignment': "parens-new-line",
+            'return': "parens-new-line",
+            'arrow': "parens-new-line",
+            'condition': 'ignore',
+            'logical': 'parens',
+            'prop': 'parens-new-line',
+        }],
+        "react/jsx-one-expression-per-line": ["error", { "allow": "single-child" }]
     },
     "settings": {
         react: {
             version: "detect"
         }
-    }  
+    },
 };
