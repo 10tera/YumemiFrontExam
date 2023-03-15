@@ -2,7 +2,7 @@
   "name": "YumemiFrontExam",
   "version": "1.0.0",
   "description": "Yumemi frontend coding exam",
-  "main": "index.js",
+  "main": "dist/main.js",
   "repository": "https://github.com/10tera/YumemiFrontExam",
   "license": "MIT",
   "scripts": {
