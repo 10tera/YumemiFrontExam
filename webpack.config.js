@@ -9,7 +9,7 @@ const webpack = require("webpack");
 module.exports = {
     entry: "./src/main.tsx",
     output: {
-        path: path.resolve(__dirname,"dist/"),
+        path: path.resolve(__dirname,"docs/"),
         filename: "[name].js",
     },
     module: {
@@ -28,5 +28,5 @@ module.exports = {
         }),
     ],
     devServer: {},
-    watch: true
+    watch: false
 }

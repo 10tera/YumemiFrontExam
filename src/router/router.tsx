@@ -7,6 +7,7 @@ export const Router = () => {
         <Routes>
             <Route path={"/"} element={<ApiKeyInput/>}/>
             <Route path={"/populations"} element={<Populations/>}/>
+            <Route path={"/a"} element={<h1>aaa</h1>} />
         </Routes>
     )
 }
