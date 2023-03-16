@@ -28,5 +28,5 @@ module.exports = {
         }),
     ],
     devServer: {},
-    watch: false
+    watch: true
 }
