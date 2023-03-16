@@ -3,7 +3,6 @@ import {ApiContext} from "../api/ApiContext/ApiContext";
 import { Title } from "../components/Title";
 import { PrefSelect } from "../components/PrefSelect";
 import { SecondTitle } from "../components/SecondTitle";
-import { DataModeSelect } from "../components/DataModeSelect";
 import { Graph } from "../components/Graph";
 
 export const Populations = () => {
@@ -25,7 +24,6 @@ export const Populations = () => {
             </section>
             <section>
                 <SecondTitle>人口構成グラフ</SecondTitle>
-                <DataModeSelect/>
                 <Graph/>
             </section>
         </Fragment>

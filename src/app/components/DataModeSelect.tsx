@@ -1,14 +1,27 @@
 /** @jsxImportSource @emotion/react */
 /** @jsx jsx */
 import { css } from "@emotion/react";
+import { ChangeEventHandler } from "react";
 
 const DataModeSelectCss = css({
-    alignItems: "center"
+    border: "none",
+    borderBottom: "1px solid",
+    outline: "none",
+    ":active": {
+        outline: "none"
+    }
 });
 
-export const DataModeSelect = () => {
+type Props = {
+    setSelectedMode: (mode: string) => void;
+}
+
+export const DataModeSelect = (props: Props) => {
+    const handleSelectChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
+        props.setSelectedMode(event.target.value);
+    }
     return(
-        <select>
+        <select css={DataModeSelectCss} onChange={handleSelectChange}>
             <option>総人口</option>
             <option>年少人口</option>
             <option>生産年齢人口</option>
