@@ -12,6 +12,6 @@ type Props = {
   children: ReactNode;
 };
 
-export const Title = ({ children }: Props) => {
-  return <h1 css={TitleCss}>{children}</h1>;
+export const SecondTitle = ({ children }: Props) => {
+  return <h2 css={TitleCss}>{children}</h2>;
 };

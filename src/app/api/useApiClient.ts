@@ -1,10 +1,10 @@
-import { ApiClient } from "./ApiClient"
+import { ApiClient } from "./ApiClient";
 
 type Props = {
-    apiKey: string | undefined;
-}
+  apiKey: string | undefined;
+};
 
-export const useApiClient = ({apiKey}: Props) => {
-    if(!apiKey) throw new Error("set apiKey is undefined");
-    return new ApiClient(apiKey);
-}
+export const useApiClient = ({ apiKey }: Props) => {
+  if (apiKey) return new ApiClient(apiKey);
+  return undefined;
+};

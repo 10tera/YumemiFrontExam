@@ -3,24 +3,15 @@
 import { css } from "@emotion/react";
 import React from "react";
 
-const textFieldCss = css({
-    border: "none",
-    borderBottom: "1px solid",
-    width: "100%",
-    ":focus": {
-        outline: "none"
-    },
+const errorMessageCss = css({
+  color: "red",
 });
 
 type Props = {
-    errorMessage: string;
-    isError: boolean
-}
+  errorMessage: string;
+  isError: boolean;
+};
 
-export const ErrorText = ({errorMessage,isError}: Props) => {
-    return(
-        <React.Fragment>
-            {isError ? <p css={textFieldCss}>{errorMessage}</p> : null}
-        </React.Fragment>
-    )
-}
+export const ErrorText = ({ errorMessage, isError }: Props) => {
+  return <React.Fragment>{isError ? <p css={errorMessageCss}>{errorMessage}</p> : null}</React.Fragment>;
+};

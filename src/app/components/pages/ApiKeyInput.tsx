@@ -3,18 +3,20 @@ import { Title } from "../atoms/Title";
 import { InputApiKey } from "../organisms/InputApiKey";
 
 export const ApiKeyInput = () => {
-    return(
-        <React.Fragment>
-            <section>
-                <Title>
-                    ゆめみ<wbr />
-                    フロントエンド<wbr />
-                    課題
-                </Title>
-            </section>
-            <section>
-                <InputApiKey/>
-            </section>
-        </React.Fragment>
-    )
-}
+  return (
+    <React.Fragment>
+      <section>
+        <Title>
+          ゆめみ
+          <wbr />
+          フロントエンド
+          <wbr />
+          課題
+        </Title>
+      </section>
+      <section>
+        <InputApiKey />
+      </section>
+    </React.Fragment>
+  );
+};

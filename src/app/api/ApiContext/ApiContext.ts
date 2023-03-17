@@ -1,5 +1,5 @@
 import { createContext, Dispatch, SetStateAction } from "react";
-import {Prefecture} from "../../types/index";
+import { Prefecture } from "../../types/index";
 
 type ApiContextValue = {
   apiKey: string | undefined;
