@@ -1,4 +1,3 @@
-import React, { useState, useRef, useMemo, useContext, useEffect } from "react";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import { DataModeSelect } from "../molecules/DataModeSelect";

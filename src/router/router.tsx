@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { ApiKeyInput } from "../app/components/pages/ApiKeyInput";
-import { Populations } from "../app/components/pages/Populations";
+import {ApiKeyInput,Populations} from "../app/components/pages";
 import { RequireApi } from "../app/components/RequireApi";
 
 export const Router = () => {
