@@ -1,7 +1,7 @@
 import {useMemo,useContext,useState, useEffect} from "react";
-import { ApiContext } from "../../api/ApiContext/ApiContext";
-import { useFetchPopulationQueries } from "../../api/useFetchPopulationQueries";
-import {PrefectureSelect,PopulationQueryResponse} from "../../types/index";
+import { ApiContext } from "../api/ApiContext/ApiContext";
+import { useFetchPopulationQueries } from "../api/useFetchPopulationQueries";
+import {PrefectureSelect,PopulationQueryResponse} from "../types/index";
 
 type Props = {
     isCheckList: PrefectureSelect[]

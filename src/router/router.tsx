@@ -1,6 +1,6 @@
 import {Routes,Route} from "react-router-dom";
-import { ApiKeyInput } from "../app/pages/ApiKeyInput";
-import { Populations } from "../app/pages/Populations";
+import { ApiKeyInput } from "../app/components/pages/ApiKeyInput";
+import { Populations } from "../app/components/pages/Populations";
 
 export const Router = () => {
     return(

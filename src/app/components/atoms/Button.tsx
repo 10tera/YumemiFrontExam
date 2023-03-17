@@ -19,8 +19,8 @@ const buttonCss = css({
     }
 });
 
-export const Button = (props: Props) => {
+export const Button = ({name,onClick}: Props) => {
     return(
-        <button type={"button"} css={buttonCss} onClick={props.onClick}>{props.name}</button>
+        <button type={"button"} css={buttonCss} onClick={onClick}>{name}</button>
     )
 }

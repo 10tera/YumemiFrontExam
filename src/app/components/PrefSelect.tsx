@@ -3,7 +3,7 @@
 import { css } from "@emotion/react";
 import {useContext,useState} from "react";
 import { ApiContext } from "../api/ApiContext/ApiContext";
-import { CheckBox } from "./CheckBox";
+import { CheckBox } from "./atoms/CheckBox";
 import {PrefectureSelect} from "../types/index";
 
 const prefSelectCss = css({

@@ -1,12 +1,12 @@
 import {Fragment,useEffect,useContext} from "react";
-import {ApiContext} from "../api/ApiContext/ApiContext";
-import { Title } from "../components/Title";
-import { PrefSelect } from "../components/PrefSelect";
-import { SecondTitle } from "../components/SecondTitle";
-import { Graph } from "../components/Graph";
+import {ApiContext} from "../../api/ApiContext/ApiContext";
+import { Title } from "../atoms/Title";
+import { PrefSelect } from "../PrefSelect";
+import { SecondTitle } from "../SecondTitle";
+import { Graph } from "../Graph";
 
-import { usePrefSelect } from "../components/logic/usePrefSelect";
-import {usePrefPopulation} from "../components/logic/usePrefPopulation";
+import { usePrefSelect } from "../../logic/usePrefSelect";
+import {usePrefPopulation} from "../../logic/usePrefPopulation";
 
 export const Populations = () => {
     const {isCheckList,handlePrefecturesCheckBox} = usePrefSelect();

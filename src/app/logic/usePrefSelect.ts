@@ -1,6 +1,6 @@
 import {useContext,useState} from "react";
-import {ApiContext} from "../../api/ApiContext/ApiContext";
-import {Prefecture, PrefectureSelect} from "../../types/index";
+import {ApiContext} from "../api/ApiContext/ApiContext";
+import {Prefecture, PrefectureSelect} from "../types/index";
 
 export const usePrefSelect = () => {
     const apiContext = useContext(ApiContext);

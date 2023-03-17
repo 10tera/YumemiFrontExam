@@ -1,10 +1,10 @@
-import {Fragment, useEffect} from "react";
-import { Title } from "../components/Title";
-import { InputApiKey } from "../components/InputApiKey";
+import React from "react";
+import { Title } from "../atoms/Title";
+import { InputApiKey } from "../organisms/InputApiKey";
 
 export const ApiKeyInput = () => {
     return(
-        <Fragment>
+        <React.Fragment>
             <section>
                 <Title>
                     ゆめみ<wbr />
@@ -15,6 +15,6 @@ export const ApiKeyInput = () => {
             <section>
                 <InputApiKey/>
             </section>
-        </Fragment>
+        </React.Fragment>
     )
 }
