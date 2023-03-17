@@ -5,13 +5,11 @@ import { PrefSelect } from "../components/PrefSelect";
 import { SecondTitle } from "../components/SecondTitle";
 import { Graph } from "../components/Graph";
 
+import { usePrefSelect } from "../components/logic/usePrefSelect";
+
 export const Populations = () => {
-    const apiContext = useContext(ApiContext);
-    
-    useEffect(() => {
-        console.log(apiContext?.apiKey);
-        console.log(apiContext?.prefData);
-    },[]);
+    const {isCheckList,handlePrefecturesCheckBox} = usePrefSelect();
+
     
     return(
         <Fragment>
@@ -20,7 +18,7 @@ export const Populations = () => {
             </section>
             <section>
                 <SecondTitle>都道府県選択</SecondTitle>
-                <PrefSelect/>
+                <PrefSelect isCheckList={isCheckList} handlePrefecturesCheckBox={handlePrefecturesCheckBox}/>
             </section>
             <section>
                 <SecondTitle>人口構成グラフ</SecondTitle>

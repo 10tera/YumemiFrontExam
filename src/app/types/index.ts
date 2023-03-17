@@ -24,3 +24,9 @@ export type PopulationsResponse = {
         }[];
     }
 }
+
+export type PrefectureSelect = {
+    isCheck: boolean;
+    prefCode: number;
+    prefName: string;
+}
