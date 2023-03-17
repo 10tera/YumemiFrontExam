@@ -9,7 +9,6 @@ type Props = {
 
 export const useFetchPopulation = async(props: Props): Promise<PopulationQueryResponse> => {
     const client = new ApiClient(props.apiKey);
-    console.log(`fetch prefCode ${props.prefCode}`);
     try{
         const data = await client.getPopulations(props.prefCode);
         //const cachedData = useMemo(() => client.getPopulations(props.prefCode),[]);

@@ -16,9 +16,6 @@ export const Populations = () => {
         console.log(populations);
     },[populations])
 
-    useEffect(() => {
-        console.log(cachedPopulations);
-    },[cachedPopulations])
     
     return(
         <Fragment>
