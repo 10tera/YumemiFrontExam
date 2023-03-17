@@ -10,7 +10,7 @@ import {usePrefPopulation} from "../components/logic/usePrefPopulation";
 
 export const Populations = () => {
     const {isCheckList,handlePrefecturesCheckBox} = usePrefSelect();
-    const {populations,cachedPopulations} = usePrefPopulation({isCheckList:isCheckList});
+    const {populations} = usePrefPopulation({isCheckList:isCheckList});
 
     useEffect(() => {
         console.log(populations);
@@ -28,7 +28,7 @@ export const Populations = () => {
             </section>
             <section>
                 <SecondTitle>人口構成グラフ</SecondTitle>
-                <Graph/>
+                <Graph populations={populations}/>
             </section>
         </Fragment>
     )
