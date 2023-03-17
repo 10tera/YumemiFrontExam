@@ -25,6 +25,11 @@ export type PopulationsResponse = {
     }
 }
 
+export type PopulationQueryResponse = {
+    prefCode: number;
+    data: PopulationsResponse;
+}
+
 export type PrefectureSelect = {
     isCheck: boolean;
     prefCode: number;

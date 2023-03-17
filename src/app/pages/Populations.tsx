@@ -6,10 +6,19 @@ import { SecondTitle } from "../components/SecondTitle";
 import { Graph } from "../components/Graph";
 
 import { usePrefSelect } from "../components/logic/usePrefSelect";
+import {usePrefPopulation} from "../components/logic/usePrefPopulation";
 
 export const Populations = () => {
     const {isCheckList,handlePrefecturesCheckBox} = usePrefSelect();
+    const {populations,cachedPopulations} = usePrefPopulation({isCheckList:isCheckList});
 
+    useEffect(() => {
+        console.log(populations);
+    },[populations])
+
+    useEffect(() => {
+        console.log(cachedPopulations);
+    },[cachedPopulations])
     
     return(
         <Fragment>
