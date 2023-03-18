@@ -1,0 +1,32 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      
+      - name: filter folder changes
+        id: filter
+        uses: actions/filter@v2.1.0
+        with:
+          filters: |
+            path: 
+              - "docs/**"
+      
+      - name: install yarn
+        run: yarn install
+      
+      - name: run tests
+        run: yarn run test
+      
+      - name: deploy to github pages
+        uses: peaceiris/actions-gh-pages@v3.10.0
+        with:
+          publish_dir: ./docs
