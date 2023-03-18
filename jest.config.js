@@ -2,6 +2,7 @@
 module.exports = {
   preset: 'ts-jest/presets/default-esm',
   testEnvironment: 'jsdom',
+  snapshotSerializers: ["@emotion/jest/serializer"],
   verbose: true,
   transform: {
     '^.+\\.js$': 'babel-jest',
@@ -10,7 +11,7 @@ module.exports = {
   globals: {
     'ts-jest': {
       tsConfigFile: './tsconfig.jest.json',
-      useESM: true
+      useESM: true,
     },
   }
 };

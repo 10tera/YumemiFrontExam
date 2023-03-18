@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from "react";
+import { ReactNode, useState } from "react";
 import { ApiContext } from "./ApiContext";
 import { Prefecture } from "../../types/index";
 
