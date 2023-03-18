@@ -16,6 +16,7 @@ jobs:
         id: filter
         uses: actions/filter@v2.1.0
         with:
+          token: ${{secrets.MY_GITHUB_TOKEN}}
           filters: |
             path: 
               - "docs/**"
