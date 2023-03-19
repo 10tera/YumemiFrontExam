@@ -36,7 +36,7 @@ describe("InputApiKey.tsx",() => {
         const startButton = screen.getByRole("button");
         fireEvent.change(input, { target: { value: "notKey" } });
         fireEvent.click(startButton);
-        await waitFor(() => {screen.debug(); expect(screen.getByText("入力されたAPIキーは無効です")).toBeInTheDocument();},{timeout: 5000});
+        await waitFor(() => expect(screen.getByText("入力されたAPIキーは無効です")).toBeInTheDocument(),{timeout: 5000});
     });
     
     it("正しいAPIキーを入力した場合",async () => {
