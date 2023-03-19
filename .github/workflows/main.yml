@@ -8,9 +8,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    environment:
-       name: github-pages
-       url: ${{ steps.deployment.outputs.page_url }}
     permissions:
       pages: write
       contents: read
@@ -43,6 +40,16 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: build
-      - name: deploy
-        if: steps.changes.outputs.docs == 'true'
-        uses: actions/deploy-pages@v1
+  deploy:
+    needs: build
+     permissions:
+       pages: write
+       id-token: write
+     environment:
+       name: github-pages
+       url: ${{ steps.deployment.outputs.page_url }}
+     runs-on: ubuntu-latest
+     steps:
+       - name: Deploy to GitHub Pages
+         id: deployment
+         uses: actions/deploy-pages@v1
