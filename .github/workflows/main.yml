@@ -32,7 +32,7 @@ jobs:
       
       - name: run tests
         if: steps.changes.outputs.docs == 'true'
-        run: yarn run test
+        run: yarn run test --forceExit
       
       - name: deploy to github pages
         if: steps.changes.outputs.docs == 'true'
