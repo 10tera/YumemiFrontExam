@@ -21,18 +21,21 @@ jobs:
         with:
           token: ${{secrets.MY_GITHUB_TOKEN}}
           filters: |
-            src: 
+            docs: 
               - "docs/**"
       
-      - if: steps.changes.outputs.src == 'true'
+      
       
       - name: install yarn
+        if: steps.changes.outputs.docs == 'true'
         run: yarn install
       
       - name: run tests
+        if: steps.changes.outputs.docs == 'true'
         run: yarn run test
       
       - name: deploy to github pages
+        if: steps.changes.outputs.docs == 'true'
         uses: actions/upload-pages-artifact@v1
         with:
           path: "docs"
