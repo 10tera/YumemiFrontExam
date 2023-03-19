@@ -32,3 +32,5 @@
 * テスト環境の構築(jest/testing-library/react)
 * components/atoms以下についてのテストコードのコーディング
 合計時間：大体約4時間としておく
+### 5日目(3/19)
+* Github Acitonsを用いた自動デプロイ環境の構築

@@ -1,13 +1,13 @@
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { ApiProvider } from "./api/ApiContext/ApiProvider";
 import { Router } from "../router/router";
 
 export const App = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ApiProvider>
         <Router />
       </ApiProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
