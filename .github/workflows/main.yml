@@ -16,13 +16,15 @@ jobs:
         uses: actions/checkout@v2
       
       - name: filter folder changes
-        id: filter
-        uses: actions/filter@v2.1.0
+        id: changes
+        uses: dorny/paths-filter@v2
         with:
           token: ${{secrets.MY_GITHUB_TOKEN}}
           filters: |
-            path: 
+            src: 
               - "docs/**"
+      
+      - if: steps.changes.outputs.src == 'true'
       
       - name: install yarn
         run: yarn install
