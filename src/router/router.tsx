@@ -14,7 +14,6 @@ export const Router = () => {
           </RequireApi>
         }
       />
-      <Route path={"*"} element={<p>404</p>} />
     </Routes>
   );
 };
