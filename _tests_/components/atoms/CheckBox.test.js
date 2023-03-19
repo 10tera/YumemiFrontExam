@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
-import { fireEvent, render, screen } from "../test-utils";
-import { CheckBox } from "../../src/app/components/atoms/CheckBox";
+import { fireEvent, render, screen } from "../../test-utils";
+import { CheckBox } from "../../../src/app/components/atoms/CheckBox";
 
 describe("CheckBox.tsx",() => {
     const setIsCheck = jest.fn();

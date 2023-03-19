@@ -63,14 +63,13 @@ export class ApiClient {
       });
       if (res.status === 200) {
         if ("statusCode" in res.data) {
-          throw new Error(`Api Resoinse Error status: ${res.data.statusCode}`);
+          throw new Error(`${res.data.statusCode}`);
         }
         return res.data;
       } else {
-        throw new Error(`Api Response Error status: ${res.status}`);
+        throw new Error(`${res.status}`);
       }
     } catch (error) {
-      console.error(error);
       throw error;
     }
   }
@@ -90,7 +89,6 @@ export class ApiClient {
         throw new Error(`Api Response Error status: ${res.status}`);
       }
     } catch (error) {
-      console.error(error);
       throw error;
     }
   }

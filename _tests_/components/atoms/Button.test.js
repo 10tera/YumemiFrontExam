@@ -1,7 +1,6 @@
 import "@testing-library/jest-dom";
-import { render, screen,fireEvent} from "../test-utils";
-import userEvent from "@testing-library/user-event";
-import {Button} from "../../src/app/components/atoms/Button";
+import { render, screen,fireEvent} from "../../test-utils";
+import {Button} from "../../../src/app/components/atoms/Button";
 
 
 describe("Button.tsx",() => {
