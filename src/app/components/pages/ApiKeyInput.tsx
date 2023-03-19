@@ -11,7 +11,7 @@ export const ApiKeyInput = () => {
           <wbr />
           フロントエンド
           <wbr />
-          課題
+          課題(コードチェック)
         </Title>
       </section>
       <section>
