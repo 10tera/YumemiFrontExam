@@ -13,7 +13,7 @@ jobs:
       contents: read
       id-token: write
     outputs:
-      isUpload: ${{ steps.upload.outputs.isUpload}}
+      isUpload: ${{ steps.set.outputs.isUpload}}
     steps:
       - name: checkout code
         uses: actions/checkout@v2
@@ -41,6 +41,9 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: docs
+      - name: setIsUpload
+        if: steps.changes.outputs.docs == 'true'
+        id: set
         run: echo "isUpload=true" >> $GITHUB_OUTPUT
 
   deploy:
