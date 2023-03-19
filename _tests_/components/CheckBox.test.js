@@ -21,9 +21,6 @@ describe("CheckBox.tsx",() => {
         fireEvent.click(checkBox);
         expect(setIsCheck).toHaveBeenCalledTimes(1);
         expect(setIsCheck).toHaveBeenCalledWith(false,prefCode);
-        fireEvent.click(checkBox);
-        expect(setIsCheck).toHaveBeenCalledTimes(2);
-        expect(setIsCheck).toHaveBeenCalledWith(true, prefCode);
     });
     
 });

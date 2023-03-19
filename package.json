@@ -12,7 +12,7 @@
     "dev": "webpack-dev-server --open --mode development",
     "format": "prettier-eslint --write **/*.{ts,tsx}",
     "lint": "eslint . --ext .ts,.tsx",
-    "test": "jest --watchAll"
+    "test": "jest --forceExit"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
