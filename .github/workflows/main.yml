@@ -12,6 +12,8 @@ jobs:
       pages: write
       contents: read
       id-token: write
+    outputs:
+      isUpload: ${{ steps.upload.outputs.isUpload}}
     steps:
       - name: checkout code
         uses: actions/checkout@v2
@@ -25,8 +27,6 @@ jobs:
             docs: 
               - "docs/**"
       
-      
-      
       - name: install yarn
         if: steps.changes.outputs.docs == 'true'
         run: yarn install
@@ -36,10 +36,13 @@ jobs:
         run: yarn run test
       
       - name: upload to github pages
+        id: upload
         if: steps.changes.outputs.docs == 'true'
         uses: actions/upload-pages-artifact@v1
         with:
           path: docs
+        run: echo "isUpload=true" >> $GITHUB_OUTPUT
+
   deploy:
     needs: build
     permissions:
@@ -51,5 +54,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: Deploy to GitHub Pages
+         if: ${{needs.build.outputs.isUpload}}=='true'
          id: deployment
          uses: actions/deploy-pages@v1
