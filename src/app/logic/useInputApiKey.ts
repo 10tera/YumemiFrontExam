@@ -50,7 +50,9 @@ export const useInputApiKey = () => {
       dispatch({ type: "setErrorMessage", payload: "APIキーを入力してください" });
       return;
     }
+    console.info("clicked button");
     useFetchPrefectures({apiKey:state.apiKey}).then((data) => {
+      console.info(data);
       if(!data.data){
         dispatch({ type: "setIsError", payload: true });
         dispatch({ type: "setErrorMessage", payload: "api response is undefined" });
@@ -61,6 +63,7 @@ export const useInputApiKey = () => {
       navigate("/populations");
     })
     .catch((error: Error) => {
+      console.info(error.message)
       let errorMessage = "";
       switch (error.message) {
         case "403":
