@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -42,14 +42,14 @@ jobs:
           path: build
   deploy:
     needs: build
-     permissions:
+    permissions:
        pages: write
        id-token: write
-     environment:
+    environment:
        name: github-pages
        url: ${{ steps.deployment.outputs.page_url }}
-     runs-on: ubuntu-latest
-     steps:
+    runs-on: ubuntu-latest
+    steps:
        - name: Deploy to GitHub Pages
          id: deployment
          uses: actions/deploy-pages@v1
