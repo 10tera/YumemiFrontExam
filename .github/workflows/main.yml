@@ -12,8 +12,6 @@ jobs:
       pages: write
       contents: read
       id-token: write
-    outputs:
-      isUpload: ${{ steps.set.outputs.isUpload}}
     steps:
       - name: checkout code
         uses: actions/checkout@v2
@@ -28,11 +26,9 @@ jobs:
               - "docs/**"
       
       - name: install yarn
-        if: steps.changes.outputs.docs == 'true'
         run: yarn install
       
       - name: run tests
-        if: steps.changes.outputs.docs == 'true'
         run: yarn run test
       
       - name: upload to github pages
@@ -41,10 +37,6 @@ jobs:
         uses: actions/upload-pages-artifact@v1
         with:
           path: docs
-      - name: setIsUpload
-        if: steps.changes.outputs.docs == 'true'
-        id: set
-        run: echo "isUpload=true" >> $GITHUB_OUTPUT
 
   deploy:
     needs: build
@@ -56,8 +48,15 @@ jobs:
        url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-       - run: echo ${{needs.build.outputs.isUpload}}
-       - name: Deploy to GitHub Pages
-         if: ${{needs.build.outputs.isUpload}}=='true'
-         id: deployment
-         uses: actions/deploy-pages@v1
+      - name: filter folder changes
+        id: changes
+        uses: dorny/paths-filter@v2
+        with:
+          token: ${{secrets.MY_GITHUB_TOKEN}}
+          filters: |
+            docs: 
+              - "docs/**"
+      - name: Deploy to GitHub Pages
+        if: steps.changes.outputs.docs == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v1
