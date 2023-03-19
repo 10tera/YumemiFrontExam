@@ -43,12 +43,15 @@ jobs:
     permissions:
        pages: write
        id-token: write
+       contents: read
     environment:
        name: github-pages
        url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: filter folder changes
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: filter
         id: changes
         uses: dorny/paths-filter@v2
         with:
