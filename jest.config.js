@@ -5,13 +5,13 @@ module.exports = {
   snapshotSerializers: ["@emotion/jest/serializer"],
   verbose: true,
   transform: {
-    '^.+\\.js$': 'babel-jest',
+    "^.+\\.js$": "babel-jest",
+    "^.+\\.tsx?$": ["ts-jest",{
+      tsconfig: "./tsconfig.jest.json",
+      useESM: true,
+    }]
   },
   moduleFileExtensions:["js","ts","tsx","jsx"],
   globals: {
-    'ts-jest': {
-      tsConfigFile: './tsconfig.jest.json',
-      useESM: true,
-    },
   }
 };

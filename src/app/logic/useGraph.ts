@@ -18,15 +18,31 @@ export const useGraph = ({ populations }: Props) => {
     title: {
       text: selectedMode,
     },
+    xAxis:{
+      title:{
+        text: "年"
+      }
+    },
+    yAxis: {
+      title:{
+        text: "人口"
+      }
+    }
   };
   const series = useMemo(() => {
     if (populations.length === 0) return [];
-    return populations.map((population) => ({
-      id: population.prefCode,
-      index: population.prefCode,
-      name: apiContext?.prefData.filter((p) => p.prefCode === population.prefCode)[0].prefName,
-      data: population.data.result.data.filter((d) => d.label === selectedMode)[0].data.map((d) => [d.year, d.value]),
-    }));
+    return populations.map((population) => {
+      try {
+        return{
+          id: population.prefCode,
+          index: population.prefCode,
+          name: apiContext?.prefData.filter((p) => p.prefCode === population.prefCode)[0].prefName,
+          data: population.data.result.data.filter((d) => d.label === selectedMode)[0].data.map((d) => [d.year, d.value]),
+        };
+      } catch (error) {
+        return {};
+      }
+    });
   }, [populations, selectedMode]);
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
   return { series, handleDataModeSelectChange, highchartsOptions, chartComponentRef };

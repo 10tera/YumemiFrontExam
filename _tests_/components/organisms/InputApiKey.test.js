@@ -46,6 +46,5 @@ describe("InputApiKey.tsx",() => {
         fireEvent.change(input, { target: { value: "validKey" } });
         fireEvent.click(startButton);
         await waitFor(() => expect(screen.queryByText("入力されたAPIキーは無効です")).not.toBeInTheDocument(), { timeout: 5000 });
-    })
-    
+    });
 });
