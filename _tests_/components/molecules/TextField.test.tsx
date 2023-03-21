@@ -1,8 +1,6 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "../../test-utils";
 import {TextField} from "../../../src/app/components/molecules/TextField";
-import exp from "constants";
-import { debug } from "console";
 
 describe("TextField.tsx",() => {
     const label = "testLabel";

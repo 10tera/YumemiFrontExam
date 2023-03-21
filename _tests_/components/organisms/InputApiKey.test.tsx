@@ -7,20 +7,11 @@ import {InputApiKey} from "../../../src/app/components/organisms/InputApiKey";
 
 
 describe("InputApiKey.tsx",() => {
-    let resData;
-    beforeEach(() => {
-        resData = {
-            data: {
-                statusCode: 403
-            }
-        }
-    });
     afterEach(() => {
         nock.cleanAll();
         jest.clearAllMocks();
     });
     init();
-    //nock("https://opendata.resas-portal.go.jp").get("/api/v1/prefectures").reply(403, resData);
     it("何も入力せずにボタンを押した場合",async () => {
         render(<InputApiKey/>);
         const input = screen.getByRole("textbox");

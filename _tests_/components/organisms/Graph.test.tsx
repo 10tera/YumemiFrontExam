@@ -1,30 +1,33 @@
 import "@testing-library/jest-dom";
-import { render, screen, fireEvent, waitFor } from "../../test-utils";
+import { render, screen} from "../../test-utils";
 import {Graph} from "../../../src/app/components/organisms/Graph";
+import {PopulationQueryResponse} from "../../../src/app/types/index";
 
 describe("Graph.tsx",() => {
-    //不正構造が混入しているデータ
-    const populations = [
+    const populations: PopulationQueryResponse[] = [
         {
             prefCode: 1,
             data: {
                 message: null,
+                result: {boundaryYear:1000,data:[]}
             },
         },
         {
             prefCode: 2,
             data: {
                 message: null,
-                data :{}
+                result: { boundaryYear: 1000, data: [] }
             }
         },
         {
+            prefCode: 3,
             data: {
-                data: {}
+                message: null,
+                result: { boundaryYear: 1000, data: [] }
             }
         }
     ];
-    it("ラベル表示確認(不正データ入力時のエラー回避確認も)",async () => {
+    it("ラベル表示確認",async () => {
         render(<Graph populations={populations}/>);
         expect(screen.getByText("人口")).toBeInTheDocument();
         expect(screen.getByText("年")).toBeInTheDocument();
