@@ -3,6 +3,7 @@
 import { css } from "@emotion/react";
 import { CheckBox } from "../atoms/CheckBox";
 import { PrefectureSelect } from "../../types/index";
+import { Button } from "../atoms/Button";
 
 const prefSelectCss = css({
   display: "grid",

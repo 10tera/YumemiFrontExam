@@ -21,7 +21,7 @@ export const CheckBox = ({ prefName, prefCode, isCheck, setIsCheck }: Props) => 
   const handleTextClick: MouseEventHandler<HTMLDivElement> = (event) => {
     event.stopPropagation();
     setIsCheck(!isCheck, prefCode);
-  }
+  };
   return (
     <React.Fragment>
       <label htmlFor={prefName} css={labelCss}>

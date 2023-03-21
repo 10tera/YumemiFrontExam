@@ -19,6 +19,13 @@ export const usePrefSelect = () => {
       ),
     );
   };
+  const handleAllCheckButtonClick = () => {
+    setIsCheckList((prev) =>
+      prev?.map((val) => {
+        return { ...val, isCheck: true };
+      }),
+    );
+  };
 
-  return { isCheckList, handlePrefecturesCheckBox };
+  return { isCheckList, handlePrefecturesCheckBox, handleAllCheckButtonClick };
 };
