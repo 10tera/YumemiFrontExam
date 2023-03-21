@@ -27,6 +27,17 @@ describe("useInputApiKet.ts",() => {
                 }, { timeout: 5000 });
             },1000);
         });
-        
+    });
+    it("正しいAPIキー入力時",async() => {
+        const { result } = renderHook(() => useInputApiKey(), { wrapper: BrowserRouter });
+        act(() => {
+            result.current.handleTextFieldChange("validKey");
+            setTimeout(() => {
+                result.current.handleStartButtonClick();
+                waitFor(() => {
+                    expect(result.current.state.isError).toBe(false);
+                }, { timeout: 5000 });
+            }, 1000);
+        });
     });
 });
