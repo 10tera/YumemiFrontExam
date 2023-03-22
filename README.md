@@ -3,6 +3,9 @@
 このリポジトリは株式会社ゆめみ様のフロントエンドコードチェックのリポジトリです。  
 コードレビューをする方へ、ぜひREADME.mdやDetail.mdを一読していただけるとありがたいです。
 
+## デプロイ先
+[Github Pages](https://10tera.github.io/YumemiFrontExam/#/)
+
 ## 詳細な内容
 [Detail.md](/document/Detail.md)にだらだらと色んな事を書いてあります。
 
